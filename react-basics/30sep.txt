@@ -1,0 +1,48 @@
+bootstrap 
+
+npm i bootstrap 
+npm i react-icons 
+
+component create - function and class
+
+App - root component 
+
+rfce 
+rafc 
+
+rcc 
+==============================================================================================
+functional component - 
+props  - property 
+<Propsdemoinfun username="ram"></Propsdemoinfun>
+
+<p id="" name="" style="" class=""></p>
+
+props passes - from parent to child 
+props are read only
+
+=========================================
+babel - transpiller 
+
+
+Fragment - as wrapper 
+1. <React.Fragment></React.Fragment>
+2. <Fragment></Fragment>
+import {Fragment} from 'react'
+3. <></> - shorthand of Fragment
+
+
+conditional rendering  - -
+ternary -
+{condition ? true: false }
+
+short circuit opertor  - &&
+{condition &&  true}
+
+App---> Propsdemoinfun ---> Propsandeventinfun 
+
+==========================================
+children props 
+events 
+map 
+form design - addition, counter 
