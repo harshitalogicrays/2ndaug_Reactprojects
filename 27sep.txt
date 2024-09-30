@@ -1,0 +1,79 @@
+nodejs install  
+
+javascript 
+ ES6 features - 
+ let and const , arrow function, destructuring object, spread  , module , class, 
+ Array = map, filter 
+ ternary operator 
+ functions
+ promise 
+ fetch 
+ axios 
+ ============================================================================
+ what is ReactJS - javascript library for building UI. 
+
+Angular 
+Vue.js 
+
+Framework vs Library  - 
+library -  collection of function , as per the requirement user can call the library and can use it.
+flexibility 
+
+Framework - collection of libraries. control is in Framework hand. 
+
+features - 
+1. SPA - single page application - index.html 
+2. component - function or class -> return JSX (javascript + html)
+
+JSX - javascript syntax extension
+navbar - .js or .jsx -> function or class 
+
+reusable component
+
+function fun(){
+    return "hello"
+}
+
+fun()
+
+function Fun(){
+    return <h1>hello</h1>
+}
+<Fun></Fun> or <Fun/>
+component are always in pascal case. (first letter captial)
+
+html tags  - small letter 
+
+3. virtual DOM - Real DOM 
+    react  creates a copy of real DOM - virtual DOM 
+    
+react fiber  -  
+
+
+
+label for -> htmlFor 
+class -> className
+
+===========================================================
+
+github.com 
+
+git install 
+
+github code push -
+component 
+props 
+events 
+state 
+
+
+
+
+
+
+
+
+
+
+
+
