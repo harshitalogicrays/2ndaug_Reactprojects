@@ -1,5 +1,6 @@
 import React from 'react'
 import PropsandEventinfun from './PropsandEventinfun'
+import Firstfuncomp from './Firstfuncomp'
 
 const Propsdemoinfun = (props) => {
     console.log(props)
@@ -14,7 +15,10 @@ const Propsdemoinfun = (props) => {
         <hr/>
         {props.isActive && <>Welcome {props.email}</>} */}
 
-        <PropsandEventinfun fname="Happy" lname="Singh" rollno={111} address="rtet" mobile={988}></PropsandEventinfun>
+        <PropsandEventinfun fname="Happy" lname="Singh" rollno={111} address="rtet" mobile={988}>
+            <h1>Hello h1</h1>
+            <Firstfuncomp/>
+        </PropsandEventinfun>
     </>
   )
 }

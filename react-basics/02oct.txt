@@ -1,0 +1,28 @@
+children props  -
+<div>
+    <p></p>
+    <h1></h1>
+</div>
+
+
+events 
+
+======================================================
+stateless - functional - only display 
+statefull - class (variable, HTTP request etc.)
+
+React 16 -  Hooks  (functional comp - statefull)
+
+hooks  - function with specific functionality 
+useState
+useEffect
+useRef
+useContext 
+useCallback
+useMemo
+useReducer
+useLayoutEffect etc.
+
+custom hooks 
+=======================
+useState - 
