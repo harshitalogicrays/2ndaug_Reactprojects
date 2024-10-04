@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 const Calculator = () => {
     let [num1,setNum1]=useState()
-    let [num2,setNum2]=useState()
+    let [num2,setNum2]=useState(2)
     let [result,setResult]=useState('')
 
     let handleCal=(op)=>{

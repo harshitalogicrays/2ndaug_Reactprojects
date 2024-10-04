@@ -1,0 +1,27 @@
+inline css -
+style={{color:"brown",textAlign:"center"}}
+
+css variable -
+   let styles = {color:'red',backgroundColor:'lightblue',textDecoration:'underline'}
+   <h2 style={styles}>erlekjltkj</h2>
+
+external css - 
+home.css 
+import 'path'
+
+imported in parent -> all children can use it without importing it.
+==============================================================
+css module -> .module.css 
+we have to import where we want to use it 
+import cssmodule from './propsdemoinfun.module.css' 
+
+============================================================
+bootstrap 
+react-bootstrap - <Container></Container> <Row></Row>
+
+==================================================
+react -bootstrap - form 
+list rendering  - 
+array -> 
+array of products -> table or card 
+styled-components 
