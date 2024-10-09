@@ -1,0 +1,13 @@
+react -bootstrap - form 
+
+formik library 
+react hook form  - useForm() hook (HTML type validations )
+
+==========================================================
+list rendering  - 
+array -> 
+array of products -> table or 
+
+card 
+styled-components 
+lifting the state up 

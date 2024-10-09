@@ -20,8 +20,3 @@ bootstrap
 react-bootstrap - <Container></Container> <Row></Row>
 
 ==================================================
-react -bootstrap - form 
-list rendering  - 
-array -> 
-array of products -> table or card 
-styled-components 

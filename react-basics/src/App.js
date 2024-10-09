@@ -7,7 +7,9 @@ import Firstfuncomp from './components/functional/Firstfuncomp';
 import Form1 from './components/functional/Form1';
 import Form2 from './components/functional/Form2';
 import FormValidations from './components/functional/FormValidations';
+import ListRendering from './components/functional/ListRendering';
 import Propsdemoinfun from './components/functional/propsdemoinfun';
+import ReactHookFormDemo from './components/functional/ReactHookFormDemo';
 import StateDemo from './components/functional/StateDemo';
 
 function App() {
@@ -19,8 +21,8 @@ function App() {
       <Firstfuncomp></Firstfuncomp>
       <Firstclasscomp/>
       <hr/> */}
-      <Propsdemoinfun username="Ram" address="Ahmedabad" mobile={9876568}
-      email={a} isActive={true}/>
+      {/* <Propsdemoinfun username="Ram" address="Ahmedabad" mobile={9876568}
+      email={a} isActive={true}/> */}
 
       {/* <EventDemo/> */}
       {/* <StateDemo/> */}
@@ -28,7 +30,10 @@ function App() {
       {/* <Calculator/> */}
       {/* <Form1/> */}
       {/* <Form2/> */}
-      <FormValidations/>
+      {/* <FormValidations/> */}
+
+        {/* <ReactHookFormDemo/> */}
+        <ListRendering/>
     </div>
   );
 }
