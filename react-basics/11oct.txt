@@ -1,0 +1,20 @@
+list rendering  - 
+array -> 
+array of products -> table or 
+
+card 
+
+lifting the state up 
+
+products ---------> productitems ----------->productcard (Card)
+(list of products)
+
+
+declutter - 
+
+product?.map ---- ? (Optional Chaining)
+
+===========================================================
+styled-components  - npm i styled-components
+
+<TextBox></TextBox>

@@ -2,15 +2,18 @@ import './App.css';
 import Firstclasscomp from './components/classcomp/Firstclasscomp';
 import Calculator from './components/functional/Calculator';
 import Counter from './components/functional/Counter';
+import CustomCompuses from './components/functional/CustomCompuses';
 import EventDemo from './components/functional/EventDemo';
 import Firstfuncomp from './components/functional/Firstfuncomp';
 import Form1 from './components/functional/Form1';
 import Form2 from './components/functional/Form2';
 import FormValidations from './components/functional/FormValidations';
 import ListRendering from './components/functional/ListRendering';
+import Products from './components/functional/Products';
 import Propsdemoinfun from './components/functional/propsdemoinfun';
 import ReactHookFormDemo from './components/functional/ReactHookFormDemo';
 import StateDemo from './components/functional/StateDemo';
+import { TextBox } from './customcsscomp';
 
 function App() {
   let a = "harshita"
@@ -33,7 +36,14 @@ function App() {
       {/* <FormValidations/> */}
 
         {/* <ReactHookFormDemo/> */}
-        <ListRendering/>
+        {/* <ListRendering/> */}
+{/* 
+        <Products/>
+
+        <TextBox type="date"></TextBox> */}
+          
+  <CustomCompuses/>
+
     </div>
   );
 }
