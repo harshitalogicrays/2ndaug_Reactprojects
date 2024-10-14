@@ -18,3 +18,8 @@ product?.map ---- ? (Optional Chaining)
 styled-components  - npm i styled-components
 
 <TextBox></TextBox>
+
+Lifting the state up - 
+parent -----> child -> state and statechnage function as a props
+
+using props function -> child comp can chnage parent state var value 

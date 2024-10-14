@@ -14,13 +14,18 @@ import Propsdemoinfun from './components/functional/propsdemoinfun';
 import ReactHookFormDemo from './components/functional/ReactHookFormDemo';
 import StateDemo from './components/functional/StateDemo';
 import { TextBox } from './customcsscomp';
-
+import Header from './components/functional/Header'
+import { Outlet } from 'react-router-dom';
 function App() {
   let a = "harshita"
   return (
+    <>
+    <Header/>
     <div className="container mt-5">
-      {/* <h1>Hello React</h1>
-      <h2>Welcome to LRA</h2>
+    <Outlet/>
+
+    {/* <h1>Hello React</h1> */}
+       {/*  <h2>Welcome to LRA</h2>
       <Firstfuncomp></Firstfuncomp>
       <Firstclasscomp/>
       <hr/> */}
@@ -42,9 +47,10 @@ function App() {
 
         <TextBox type="date"></TextBox> */}
           
-  <CustomCompuses/>
+  {/* <CustomCompuses/> */}
 
     </div>
+    </>
   );
 }
 
