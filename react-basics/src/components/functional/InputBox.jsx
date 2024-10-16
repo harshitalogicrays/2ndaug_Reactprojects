@@ -1,6 +1,6 @@
 import React from 'react'
 
-const InputBox = ({type="text",id="",name="",value="",placeholder="",required=false,
+const InputBox = ({type="text",id="",name="",value="",placeholder="",required=false, isDisabled=false,
     change1,blur=()=>{}, maxLength=50,
     append=false,prepend=false,
     ...props}) => {
@@ -29,7 +29,7 @@ const InputBox = ({type="text",id="",name="",value="",placeholder="",required=fa
     required={required}
     maxLength={maxLength}
     value={value}
-    onChange={change1}
+    onChange={change1} disabled={isDisabled}
 />
     }
    </>

@@ -8,7 +8,7 @@ const StateDemo = () => {
 
     let handleAdd = ()=>{    
         setResult(num1+num2) // result =num1+num2
-        console.log(result)
+    //  /   console.log(result)
     }
   return (
     <>

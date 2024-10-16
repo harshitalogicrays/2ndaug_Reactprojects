@@ -1,0 +1,38 @@
+API - Application Programming interface 
+
+frontend/client -> server / backend --> database 
+
+REST API - representational state transfer 
+
+fetch API - javascript provides it 
+HTTP Request - get,post,put/patch and delete 
+it return promise 
+by default get method
+========================================
+
+fetch("https://fakestoreapi.com/products")
+.then((res)=>{
+   return res.json().then((data)=>console.log(data))
+})
+.catch((err)=>console.log(err.message))
+
+async function fun(){
+try{
+let res =  await fetch("https://fakestoreapi.com/products")
+let data = await res.json()
+console.log(data)
+}
+catch(err){
+    console.log(err)
+}
+}
+
+=======================
+useEffect - 
+axios - npm i axios 
+=============================================
+useCallback 
+useRef 
+
+========================================
+useMemo 

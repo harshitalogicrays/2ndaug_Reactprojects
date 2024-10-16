@@ -21,8 +21,9 @@ const CustomCompuses = () => {
 
     <CustomButton value="input button"></CustomButton> */}
 
-    <InputBox value={email} change1={ (e)=> setEmail(e.target.value)}/>
+    <InputBox value={email} change1={ (e)=> setEmail(e.target.value)} isDisabled={true}/>
 
+    <InputBox value={email} change1={ (e)=> setEmail(e.target.value)} isDisabled={false}/>
 
     <InputBox type="password" value={12345}  className="mt-3" append={true} prepend={true} prependIcon="@"><button type="button" className="btn btn-primary mt-3">Show</button></InputBox>
    </>

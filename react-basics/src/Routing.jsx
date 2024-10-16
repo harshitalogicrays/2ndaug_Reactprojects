@@ -10,6 +10,8 @@ import Form1 from './components/functional/Form1'
 import FormValidations from './components/functional/FormValidations'
 import ReactHookFormDemo from './components/functional/ReactHookFormDemo'
 import CustomCompuses from './components/functional/CustomCompuses'
+import ListRendering from './components/functional/ListRendering'
+import Firstclasscomp from './components/classcomp/Firstclasscomp'
 
 const Routing = () => {
   return (
@@ -25,6 +27,9 @@ const Routing = () => {
             <Route path="fun/form/validations" element={<FormValidations/>}></Route>
             <Route path="fun/form/rhf" element={<ReactHookFormDemo/>}></Route>
             <Route path="fun/custom" element={<CustomCompuses/>}></Route>
+            <Route path="fun/list" element={<ListRendering/>}></Route>
+
+            <Route path="/class/first" element={<Firstclasscomp/>}></Route>
         </Route>
     </Routes>
    </>
