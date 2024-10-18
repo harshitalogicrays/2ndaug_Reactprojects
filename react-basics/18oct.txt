@@ -1,0 +1,30 @@
+memoization / code optimization / performance of comp 
+useCallback  - to increase the performance of comp 
+cache memory 
+====================================
+useCallback is a React Hook that lets you cache a function definition between re-renders.
+
+
+useRef 
+========================================
+useMemo  - expensive calculation - cache 
+useMemo is a React Hook that lets you cache the result of a calculation between re-renders.
+
+
+:hover 
+:first 
+::selection 
+:focus 
+
+=========================================================================
+Form- 
+1. controlled component - react manages it - state and onChange
+    state - variable declare and init. 
+2. uncontrolled component -  REAL DOM manges it. ref (reference)
+ref -> hold the reference of the element 
+ref returns a property -  current property 
+useRef()
+
+=========================================================
+useRef 
+class component -  

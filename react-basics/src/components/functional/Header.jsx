@@ -13,6 +13,8 @@ const Header = () => {
     {id:7,text:'rhf',path:'/fun/form/rhf'},
     {id:8,text:'custom comp',path:'/fun/custom'},
     {id:9,text:'list',path:'/fun/list'},
+    {id:10,text:'useCallback and useRef',path:'/fun/callback'},
+    {id:11,text:'useMemo hook',path:'/fun/memo'}
   ]
   return (
     <>

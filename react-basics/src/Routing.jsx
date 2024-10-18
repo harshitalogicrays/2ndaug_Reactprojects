@@ -12,6 +12,8 @@ import ReactHookFormDemo from './components/functional/ReactHookFormDemo'
 import CustomCompuses from './components/functional/CustomCompuses'
 import ListRendering from './components/functional/ListRendering'
 import Firstclasscomp from './components/classcomp/Firstclasscomp'
+import UseCallbackandUseRef from './components/functional/UseCallbackandUseRef'
+import UseMemoDemo from './components/functional/UseMemoDemo'
 
 const Routing = () => {
   return (
@@ -28,6 +30,8 @@ const Routing = () => {
             <Route path="fun/form/rhf" element={<ReactHookFormDemo/>}></Route>
             <Route path="fun/custom" element={<CustomCompuses/>}></Route>
             <Route path="fun/list" element={<ListRendering/>}></Route>
+            <Route path="fun/callback" element={<UseCallbackandUseRef/>}></Route>
+            <Route path='/fun/memo' element={<UseMemoDemo/>}/>
 
             <Route path="/class/first" element={<Firstclasscomp/>}></Route>
         </Route>
