@@ -1,0 +1,20 @@
+useRef 
+class component -  
+
+component - 
+1. class component - statefull (state,onChange , functionalities )
+2. function component - stateless (no state , only rendering )
+react 16  -  hooks
+
+class - state
+
+class 
+constructor-
+this.fname=fname 
+this.state={}
+
+==========================================================
+ref in class 
+pure component
+component life cycle methods 
+HOC (higher order component)

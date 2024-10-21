@@ -14,7 +14,8 @@ const Header = () => {
     {id:8,text:'custom comp',path:'/fun/custom'},
     {id:9,text:'list',path:'/fun/list'},
     {id:10,text:'useCallback and useRef',path:'/fun/callback'},
-    {id:11,text:'useMemo hook',path:'/fun/memo'}
+    {id:11,text:'useMemo hook',path:'/fun/memo'},
+    {id:12,text:'useRef hook',path:'/fun/ref'}
   ]
   return (
     <>
@@ -46,7 +47,7 @@ const Header = () => {
           </ul>
         </li>
         <li className="nav-item">
-        <NavLink  className = {({isActive})=>isActive?"nav-link text-danger bg-info fw-bold":"nav-link"} to="/class/first">Class Component</NavLink>
+        <NavLink  className = {({isActive})=>isActive?"nav-link text-danger bg-info fw-bold":"nav-link"} to="/class">Class Component</NavLink>
         </li>
       </ul>
 

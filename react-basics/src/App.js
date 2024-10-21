@@ -21,7 +21,7 @@ function App() {
   return (
     <>
     <Header/>
-    <div className="container mt-5">
+    <div className="container-fluid mt-5">
     <Outlet/>
 
     {/* <h1>Hello React</h1> */}

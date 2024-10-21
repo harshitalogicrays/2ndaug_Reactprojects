@@ -14,6 +14,11 @@ import ListRendering from './components/functional/ListRendering'
 import Firstclasscomp from './components/classcomp/Firstclasscomp'
 import UseCallbackandUseRef from './components/functional/UseCallbackandUseRef'
 import UseMemoDemo from './components/functional/UseMemoDemo'
+import UseRefDemo from './components/functional/UseRefDemo'
+import ClassLayout from './components/classcomp/ClassLayout'
+import PropsinCLass from './components/classcomp/PropsinCLass'
+import EventandStateinclass from './components/classcomp/EventandStateinclass'
+import Forminclass from './components/classcomp/Forminclass'
 
 const Routing = () => {
   return (
@@ -32,8 +37,14 @@ const Routing = () => {
             <Route path="fun/list" element={<ListRendering/>}></Route>
             <Route path="fun/callback" element={<UseCallbackandUseRef/>}></Route>
             <Route path='/fun/memo' element={<UseMemoDemo/>}/>
+            <Route path='/fun/ref' element={<UseRefDemo/>}/>
 
-            <Route path="/class/first" element={<Firstclasscomp/>}></Route>
+            <Route path="/class" element={<ClassLayout/>}>
+                <Route path = 'first' element={<Firstclasscomp/>}/>
+                <Route path = 'props' element={<PropsinCLass username="Happy Singh" isActive={true}><h2>Children of props</h2></PropsinCLass>}/>
+                <Route path = 'event/state' element={<EventandStateinclass/>}/>
+                <Route path = 'form' element={<Forminclass/>}/>
+            </Route>
         </Route>
     </Routes>
    </>
