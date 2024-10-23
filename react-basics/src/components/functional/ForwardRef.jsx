@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ForwardRefDemo =React.forwardRef(({props,ref}) => {
+const ForwardRefDemo =React.forwardRef((props,ref) => {
   return (
     <div>
        <input type="text"  ref={ref}

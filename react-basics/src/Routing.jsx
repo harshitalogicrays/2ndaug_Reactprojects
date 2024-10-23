@@ -19,6 +19,11 @@ import ClassLayout from './components/classcomp/ClassLayout'
 import PropsinCLass from './components/classcomp/PropsinCLass'
 import EventandStateinclass from './components/classcomp/EventandStateinclass'
 import Forminclass from './components/classcomp/Forminclass'
+import Refdemoinclass from './components/classcomp/Refdemoinclass'
+import PureCompDemo from './components/classcomp/PureCompDemo'
+import Lifecycleemethods from './components/classcomp/Lifecycleemethods'
+import ErrorBoundaryDemo from './components/classcomp/ErrorBoundaryDemo'
+import HOCdemo from './components/classcomp/HOCdemo'
 
 const Routing = () => {
   return (
@@ -44,6 +49,11 @@ const Routing = () => {
                 <Route path = 'props' element={<PropsinCLass username="Happy Singh" isActive={true}><h2>Children of props</h2></PropsinCLass>}/>
                 <Route path = 'event/state' element={<EventandStateinclass/>}/>
                 <Route path = 'form' element={<Forminclass/>}/>
+                <Route path = 'ref' element={<Refdemoinclass/>}/>
+                <Route path = 'pure' element={<PureCompDemo/>}/>
+                <Route path = 'lifecycle' element={<Lifecycleemethods/>}/>
+                <Route path = 'hoc' element={<HOCdemo/>}/>
+                <Route path='error' element={<ErrorBoundaryDemo/>}/>
             </Route>
         </Route>
     </Routes>

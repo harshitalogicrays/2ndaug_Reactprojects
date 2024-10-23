@@ -1,0 +1,12 @@
+ref in class  - 
+
+pure component
+component life cycle methods  -
+1. mounting phase 
+2. updating phase
+3. unmounting phase
+4. error handling
+
+HOC (higher order component) - 
+
+context API - theory 

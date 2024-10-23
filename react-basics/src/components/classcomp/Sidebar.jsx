@@ -7,6 +7,11 @@ export default class Sidebar extends Component {
         {id:2,text:'Props',url:'/class/props'},
         {id:3,text:'event and state',url:'/class/event/state'},
         {id:4,text:'Form in class Comp',url:'/class/form'},
+        {id:5,text:'Ref in class Comp',url:'/class/ref'},
+        {id:6,text:'pure comp',url:'/class/pure'},
+        {id:7,text:'class Comp lifecycle method',url:'/class/lifecycle'},
+        {id:8,text:'Higher Order Component',url:'/class/hoc'},
+        {id:9,text:'Error Boundary',url:'/class/error'},
     ]
   render() {
     return (
