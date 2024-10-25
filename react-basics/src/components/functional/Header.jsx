@@ -51,6 +51,11 @@ const Header = () => {
         </li>
       </ul>
 
+          {/* switch */}
+          <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox"/>
+        </div>
+
       <form className="d-flex" role="search">
         <div className="input-group">
         <input className="form-control" type="search" placeholder="Search" aria-label="Search"/>

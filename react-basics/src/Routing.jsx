@@ -24,12 +24,13 @@ import PureCompDemo from './components/classcomp/PureCompDemo'
 import Lifecycleemethods from './components/classcomp/Lifecycleemethods'
 import ErrorBoundaryDemo from './components/classcomp/ErrorBoundaryDemo'
 import HOCdemo from './components/classcomp/HOCdemo'
+import Contextdemo from './contextdemo'
 
 const Routing = () => {
   return (
    <>
     <Routes>
-        <Route path="/" element={<App/>}>
+        <Route path="/" element={<Contextdemo><App/></Contextdemo>}>
             <Route path="products" element={<Products/>}></Route>
             <Route path="fun/first" element={<Firstfuncomp/>}></Route>
             <Route path="fun/props" element={<Propsdemoinfun/>}></Route>

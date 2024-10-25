@@ -1,0 +1,51 @@
+HOC (higher order component) - A higher-order component (HOC) is an advanced technique in React for reusing component logic
+
+a higher-order component is a function that takes a component and returns a new component.
+
+function fun(fun1){
+    return fun2
+}
+
+=================================================================================
+
+context API - theory 
+
+script -> 
+var a //global 
+
+
+function fun(){
+    var b 
+    function fun2(){
+            function fun3(){
+
+            }
+    }
+    function fun4(){
+
+    }
+    function fun5(){
+
+    }
+}
+
+function fun1(){ a=20}
+
+
+App - isLoggedIn=true
+Fun1 - state (state is private)
+Fun2 is the children of Fun1 - props 
+Fun3 - props 
+Fun4 - props
+Logout -> isLoggedIn= false 
+
+
+prop drilling 
+3rd party tools -
+flux 
+redux 
+@reduxjs/toolkit 
+
+Context API - overcome the issue of props drilling (pass props down manually at every level)
+
+Context provides a way to pass data through the component tree without having to pass props down manually at every level.
