@@ -1,6 +1,7 @@
 import React from 'react'
 import { BsSearch } from 'react-icons/bs'
 import { NavLink } from 'react-router-dom'
+import ThemeBtn from '../ThemeBtn'
 
 const Header = () => {
   const funlinks = [
@@ -52,9 +53,7 @@ const Header = () => {
       </ul>
 
           {/* switch */}
-          <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox"/>
-        </div>
+            <ThemeBtn/>
 
       <form className="d-flex" role="search">
         <div className="input-group">

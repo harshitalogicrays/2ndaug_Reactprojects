@@ -1,0 +1,12 @@
+lazy loading -  which means that code is only loaded when it's needed. This results in smaller bundle sizes and faster initial load times
+==========================
+vite tool vs cra -
+vite - HMR (hot module replacment)
+
+Hot Module Replacement (HMR) exchanges, adds, or removes modules while an application is running, without a full reload. 
+=========================
+npm create vite 
+
+
+tailwindcss - A utility-first CSS framework packed with classes
+
