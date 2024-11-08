@@ -1,0 +1,12 @@
+position -
+1. static  (by default)
+2. relative 
+3. absolute 
+4. fixed 
+5. sticky 
+
+left,right,top, bottom 
+
+3div -> 
+div - flex 
+    3div  flex-2

@@ -26,12 +26,14 @@ import ErrorBoundaryDemo from './components/classcomp/ErrorBoundaryDemo'
 import HOCdemo from './components/classcomp/HOCdemo'
 import Contextdemo from './contextdemo'
 import ThemeContext from './components/ThemeContext'
+import Home from './components/Home'
 
 const Routing = () => {
   return (
    <>
     <Routes>
         <Route path="/" element={<ThemeContext><Contextdemo><App/></Contextdemo></ThemeContext>}>
+            <Route path="" element={<Home/>}></Route>
             <Route path="products" element={<Products/>}></Route>
             <Route path="fun/first" element={<Firstfuncomp/>}></Route>
             <Route path="fun/props" element={<Propsdemoinfun/>}></Route>
