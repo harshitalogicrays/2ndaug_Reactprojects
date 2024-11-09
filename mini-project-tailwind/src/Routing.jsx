@@ -7,9 +7,11 @@ import Contact from "./features/Contact";
 import Login from "./features/Login";
 import Register from "./features/Register";
 import Pagenotfound from "./features/Pagenotfound";
+import CartContext from "./CartContext";
+import Cart from "./features/Cart";
 
 const routing = createBrowserRouter([
-    {path:'/',element:<App/>,
+    {path:'/',element:<CartContext><App/></CartContext>,
         children:[
             {path:'',element:<Home/>},
             {path:'about',element:<About/>},
@@ -17,7 +19,7 @@ const routing = createBrowserRouter([
             {path:'contact',element:<Contact/>},
             {path:'login',element:<Login/>},
             {path:'register',element:<Register/>},
-            
+            {path:'cart',element:<Cart/>},
         ]
     },
     {path:'*',element:<Pagenotfound/>}

@@ -1,11 +1,12 @@
 import React from 'react'
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { ShoppingCartIcon } from '@heroicons/react/16/solid'
+import { useCart } from '../CartContext'
 
 const Header = () => {
-
+  
     const navigation = [
         { name: 'Home', href: '/'},
         { name: 'About', href: '/about' },
@@ -13,6 +14,8 @@ const Header = () => {
         { name: 'Contact', href: '/contact'},
       ]
       
+      const cartcon = useCart()
+      // console.log(cartcon)
   return (
     <>
         <Disclosure as="nav" className="bg-gray-800">
@@ -65,14 +68,14 @@ const Header = () => {
                     }
                   >  Register </NavLink>
 
-            <button
+            <Link to='/cart'
               type="button"
               className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
             >
 
               <ShoppingCartIcon aria-hidden="true" className="h-8 w-8" />
-              <span className='bg-red-600 text-white px-2 rounded-full absolute top-2 left-8 mr-3'>0</span>
-            </button>
+              <span className='bg-red-600 text-white px-2 rounded-full absolute -top-1 -right-3 inline-flex items-center justify-center text-xs'>{cartcon.cartItems.length}</span>
+            </Link>
 
             {/* Profile dropdown */}
             <Menu as="div" className="relative ml-3">
