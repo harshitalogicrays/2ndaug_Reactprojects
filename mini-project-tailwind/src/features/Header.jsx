@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { ShoppingCartIcon } from '@heroicons/react/16/solid'
 import { useCart } from '../CartContext'
+import { toast } from 'react-toastify'
+import { ShowonLogin, ShowonLogout } from './hiddenlinks'
 
 const Header = () => {
-  
+    const redirect = useNavigate()
+    const [username,setUsername] =useState('')
     const navigation = [
         { name: 'Home', href: '/'},
         { name: 'About', href: '/about' },
@@ -16,6 +19,20 @@ const Header = () => {
       
       const cartcon = useCart()
       // console.log(cartcon)
+
+      const handleDelete=()=>{
+        sessionStorage.removeItem('2ndaug-mini')
+        toast.success("LoggedOut Successfully")
+        redirect('/')
+      }
+
+      useEffect(()=>{
+        if(sessionStorage.getItem('2ndaug-mini') !=null){
+          let obj = JSON.parse(sessionStorage.getItem('2ndaug-mini'))
+          setUsername(obj.username)
+        }
+        else setUsername('Guest')
+      },[sessionStorage.getItem('2ndaug-mini')])
   return (
     <>
         <Disclosure as="nav" className="bg-gray-800">
@@ -57,6 +74,7 @@ const Header = () => {
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
             
+           <ShowonLogout> 
           <NavLink to="/login"
                     className={({ isActive}) =>
                       isActive ? "bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" : "rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
@@ -67,7 +85,8 @@ const Header = () => {
                       isActive ? "bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" : "rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
                     }
                   >  Register </NavLink>
-
+          </ShowonLogout>
+          <ShowonLogin>
             <Link to='/cart'
               type="button"
               className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
@@ -82,12 +101,8 @@ const Header = () => {
               <div>
                 <MenuButton className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                   <span className="absolute -inset-1.5" />
-                  <span className="sr-only">Open user menu</span>
-                  <img
-                    alt=""
-                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                    className="h-8 w-8 rounded-full"
-                  />
+                  <span className='text-white'>Welcome {username}</span>
+                
                 </MenuButton>
               </div>
               <MenuItems
@@ -111,15 +126,15 @@ const Header = () => {
                   </a>
                 </MenuItem>
                 <MenuItem>
-                  <a
-                    href="#"
+                  <button
                     className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:outline-none"
-                  >
+                  onClick={handleDelete}>
                     Sign out
-                  </a>
+                  </button>
                 </MenuItem>
               </MenuItems>
             </Menu>
+            </ShowonLogin>
           </div>
         </div>
       </div>

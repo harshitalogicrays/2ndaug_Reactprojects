@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useCart } from '../CartContext'
 import { TrashIcon } from '@heroicons/react/24/outline'
 import { Link } from 'react-router-dom'
@@ -6,7 +6,9 @@ import { Link } from 'react-router-dom'
 const Cart = () => {
     const cartcon = useCart()
     let {cartItems,total,increment,decrement,remove_from_cart,emptycart,calculate_total} = cartcon
-    let totalPrice=0    
+      useEffect(()=>{
+        calculate_total()
+      },[cartItems])
     return (
             <div className="max-w-7xl mx-auto p-8 bg-gray-100">
           <h1 className="text-4xl font-bold mb-8 text-gray-800">Shopping Cart</h1>
@@ -20,7 +22,7 @@ const Cart = () => {
                       <div>
                         <h2 className="text-xl font-semibold text-gray-800">{item.title}</h2>
                         <p className="text-gray-600">Price: ${item.price.toFixed(2)}</p>
-                        <p className="text-gray-600">Total Price: ${item.price.toFixed(2)}</p>
+                        <p className="text-gray-600">Total Price: ${(item.qty*item.price).toFixed(2)}</p>
                         <div className="flex items-center mt-4">
                             <button type="button"  className="w-12 p-2" onClick={()=>decrement(item)}>-</button>
                           <input  type="text" value={item.qty}
@@ -28,7 +30,7 @@ const Cart = () => {
                           />
                           <button type="button"  className="w-12 p-2" onClick={()=>increment(item)}>+</button>
                         </div>  </div>  </div>
-                    <button className="text-red-500 hover:text-red-700">
+                    <button className="text-red-500 hover:text-red-700" onClick={()=>remove_from_cart(item.id)}>
                       <TrashIcon className="h-6 w-6" />
                     </button>
                   </div>
@@ -42,18 +44,18 @@ const Cart = () => {
                 <h2 className="text-2xl font-semibold text-gray-800 mb-6">Order Summary</h2>
                 <div className="flex justify-between text-lg mb-4">
                   <span className="text-gray-700">Subtotal</span>
-                  <span className="font-medium text-gray-900">${totalPrice.toFixed(2)}</span>
+                  <span className="font-medium text-gray-900">${total.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between text-lg mb-4">
                   <span className="text-gray-700">Shipping</span>
-                  <span className="font-medium text-gray-900">$5.00</span>
+                  <span className="font-medium text-gray-900">{total > 0 && total<50 ? "$5.00" :"$0.00"}</span>
                 </div>
                 <div className="flex justify-between text-xl font-bold border-t pt-6">
                   <span>Total</span>
-                  <span className="text-gray-900">${(totalPrice + 5).toFixed(2)}</span>
+                  <span className="text-gray-900">${<>{total > 0 && total<50 ? (total + 5).toFixed(2) : (total + 0).toFixed(2)} </> }</span>
                 </div>
                 <div className="flex justify-between">
-                <button className="mt-8 w-52 bg-red-600 text-white py-3 rounded-lg text-lg font-medium hover:bg-red-700 transition duration-200 me-2">
+                <button className="mt-8 w-52 bg-red-600 text-white py-3 rounded-lg text-lg font-medium hover:bg-red-700 transition duration-200 me-2" onClick={()=>emptycart()}>
                     Empty Cart
                   </button>
                 <Link to="/checkout">

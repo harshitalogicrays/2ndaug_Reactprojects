@@ -1,0 +1,16 @@
+local json server 
+
+json file - as a server side file 
+
+https://6731a9c07aaf2a9aff1172ac.mockapi.io/users/10 
+
+10 -> id (query parameter)
+
+https://6731a9c07aaf2a9aff1172ac.mockapi.io/users?username=ram
+
+
+https://6731a9c07aaf2a9aff1172ac.mockapi.io/users?username=ram&password=ram123
+
+?username=ram 
+?username=ram&password=ram123 => query string 
+
