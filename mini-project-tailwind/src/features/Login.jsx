@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
+import Loader from './Loader'
 
 const Login = () => {
   const [user,setUser] =useState({email:'',password:''})
+  const [isLoading,setIsLoading] = useState(false)
   const redirect  =  useNavigate()
   const handleSubmit = async(e)=>{
     e.preventDefault()
+    setIsLoading(true)
     if(!user.email || !user.password){toast.error("invalid credentials");return}
     try{
      const res =  await fetch(`https://6731a9c07aaf2a9aff1172ac.mockapi.io/users?email=${user.email}`)
@@ -17,13 +20,17 @@ const Login = () => {
         sessionStorage.setItem('2ndaug-mini',JSON.stringify(obj))
 
         toast.success("loggedIn Successfully")
+        setIsLoading(false)
         redirect('/')
       }
-      else{toast.error("invalid credentials") }
+      else{toast.error("invalid credentials");setIsLoading(false) }
     }
     catch(err){toast.error(err.message)}
+    setIsLoading(false)
   }
   return (
+    <>
+    {isLoading && <Loader/>}
     <div className='flex justify-center items-center mt-7'>
     <form className='w-full max-w-md mt-7' onSubmit={handleSubmit}>
       <h1 className='block text-2xl font-bold text-center mb-7 text-indigo-800'>Login</h1>
@@ -42,6 +49,7 @@ const Login = () => {
       <button type="submit" className="w-full border bg-indigo-800 text-white rounded-md py-1 hover:bg-indigo-700">Login</button>
     </form>
   </div>
+  </>
   )
 }
 

@@ -1,0 +1,33 @@
+flux 
+
+redux -
+@reduxjs/toolkit  -application state mgmt. tool (root )
+only one store 
+code organzied 
+
+store 
+action 
+reducers 
+state (data)
+view 
+
+
+soda shop, icecream, cake shop  - 
+soda shop - 
+customer - view 
+data - menu 
+shelf / counter - store 
+shopkeeper - reducers (pure function)
+BUY_SODA - action 
+
+
+      useDispatch()
+view-----------> action --------> reducers---------> store
+customer        BUY_SODA           shopkeeper     (soda,icecream etc = state)                            
+                                 (functions)
+
+
+store ---------> customer 
+
+
+slices - 
