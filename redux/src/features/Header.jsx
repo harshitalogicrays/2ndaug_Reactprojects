@@ -1,12 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { BsCart, BsSearch } from 'react-icons/bs'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import { selectCart } from '../redux/cartSlice'
+import { filterbysearch } from '../redux/filterSlice'
+import { fetchProducts, selectProducts } from '../redux/productSlice'
 
 const Header = () => {
   // const cartitems = useSelector((state)=>state.cart.cartItems)
   const cartitems = useSelector(selectCart)
+  const [search,setSearch] =useState('')
+  const dispatch = useDispatch()
+  useEffect(()=>{dispatch(fetchProducts())},[]) // only onload
+  const products = useSelector(selectProducts)
+  useEffect(()=>{ 
+    dispatch(filterbysearch({products,search}))
+  },[search])
+  // const handleSubmit =(e)=>{
+  //   e.preventDefault()
+  //   dispatch(filterbysearch({products,search}))
+  // }
   return (
  <>
  <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
@@ -27,8 +40,9 @@ const Header = () => {
       </ul>
       <form class="d-flex" role="search">
         <div className="input-group">
-        <input class="form-control" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-danger" type="submit"><BsSearch/></button>
+        <input class="form-control" type="search" value={search} onChange={(e)=>setSearch(e.target.value)}
+         placeholder="Search" aria-label="Search"/>
+        {/* <button class="btn btn-danger" type="submit"><BsSearch/></button> */}
         </div>
       </form>
       <ul class="navbar-nav  mb-2 mb-lg-0">
