@@ -1,0 +1,14 @@
+json-server 
+npm i json-server@0.17.4
+
+npx json-server data.json --watch
+
+npx json-server data.json --watch --port 1000 (by defualt 3000)
+
+fetch -> axios 
+npm i axios 
+fetch("")
+fetch("",{method:"POST"})
+
+axios.get("url")
+axios.post("url",data)

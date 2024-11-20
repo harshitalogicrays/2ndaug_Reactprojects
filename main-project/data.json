@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "id": "9f88",
+      "username": "ram",
+      "email": "ram@gmail.com",
+      "password": "ram123",
+      "cpassword": "ram123",
+      "role": "1",
+      "createdAt": "2024-11-20T06:53:34.743Z"
+    },
+    {
+      "id": "6ec5",
+      "username": "admin",
+      "email": "admin@gmail.com",
+      "password": "admin123",
+      "cpassword": "admin123",
+      "role": "0",
+      "createdAt": "2024-11-20T06:54:49.711Z"
+    }
+  ],
+  "products": [],
+  "orders": [],
+  "cart": []
+}
