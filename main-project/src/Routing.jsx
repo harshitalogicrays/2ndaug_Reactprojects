@@ -10,6 +10,10 @@ import Pagenotfound from "./features/Pagenotfound";
 import Cart from "./features/Cart";
 import Dashboard from "./features/Admin/Dashboard";
 import AdminLayout from "./features/Admin/AdminLayout";
+import AddCategory from "./features/Admin/AddCategory";
+import ViewCategory from "./features/Admin/ViewCategory";
+import AddProduct from "./features/Admin/AddProduct";
+import ViewProduct from "./features/Admin/ViewProduct";
 
 const routing = createBrowserRouter([
     {path:'/',element:<App/>,
@@ -25,7 +29,13 @@ const routing = createBrowserRouter([
     },
     {path:'/admin',element:<AdminLayout/>,
         children:[
-            {path:'',element:<Dashboard/>}
+            {path:'',element:<Dashboard/>},
+            {path:'category/add',element:<AddCategory/>},
+            {path:'category/view',element:<ViewCategory/>},
+            {path:'category/edit/:id',element:<AddCategory/>},
+            {path:'product/add',element:<AddProduct/>},
+            {path:'product/view',element:<ViewProduct/>},
+            {path:'product/edit/:id',element:<AddProduct/>},
         ]
     },
     {path:'*',element:<Pagenotfound/>}

@@ -1,5 +1,7 @@
 import React from 'react'
-import { FaHome } from 'react-icons/fa'
+import { FaHome, FaList, FaListUl, FaPenFancy, FaPenSquare, FaThList } from 'react-icons/fa'
+import { FaListOl } from 'react-icons/fa6'
+import { Link } from 'react-router-dom'
 
 const Sidebar = () => {
   return (
@@ -9,9 +11,21 @@ const Sidebar = () => {
       <span className="hidden sm:block">Admin Panel</span>
     </div>
     <nav className="flex flex-col mt-4">
-      <a href="#" className="flex items-center p-4 hover:bg-gray-700">
+      <Link to='/admin' className="flex items-center p-4 hover:bg-gray-700">
         <FaHome className="mr-0 sm:mr-3" />
-        <span className="hidden sm:block">Dashboard</span> </a>
+        <span className="hidden sm:block">Dashboard</span> </Link>
+        <Link to='/admin/category/view' className="flex items-center p-4 hover:bg-gray-700">
+        <FaList className="mr-0 sm:mr-3" />
+        <span className="hidden sm:block">View Category</span> </Link>
+        <Link to='/admin/category/add' className="flex items-center p-4 hover:bg-gray-700">
+        <FaPenFancy className="mr-0 sm:mr-3" />
+        <span className="hidden sm:block">Add Category</span> </Link>
+        <Link to='/admin/product/add' className="flex items-center p-4 hover:bg-gray-700">
+        <FaPenSquare className="mr-0 sm:mr-3" />
+        <span className="hidden sm:block">Add Product</span> </Link>
+        <Link to='/admin/product/view' className="flex items-center p-4 hover:bg-gray-700">
+        <FaThList className="mr-0 sm:mr-3" />
+        <span className="hidden sm:block">View Products</span> </Link>
     </nav>  </div>	
   )
 }

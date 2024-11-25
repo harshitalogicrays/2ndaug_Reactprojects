@@ -12,6 +12,7 @@ function App() {
     draggable pauseOnHover={false} theme="colored"/>
     <Header/>
     <Outlet/>
+
     </>
   )
 }
