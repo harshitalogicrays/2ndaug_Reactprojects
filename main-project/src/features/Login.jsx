@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import Loader from './Loader'
 import { useDispatch } from 'react-redux'
@@ -10,7 +10,9 @@ const Login = () => {
   const [isLoading,setIsLoading] = useState(false)
   const redirect  =  useNavigate()
   const dispatch = useDispatch()
-
+  const location = useLocation()
+  // console.log(location)
+  const redirectURL = location.state ? location.state.to : '/'
   const handleSubmit = async(e)=>{
     e.preventDefault()
     setIsLoading(true)
@@ -23,7 +25,8 @@ const Login = () => {
           redirect('/admin')
         }
         else if(data[0].role=="1"){
-          redirect('/')
+          // redirect('/')
+          redirect(redirectURL)
         }
         let obj = {isLoggedIn:true,username:data[0].username,email:data[0].email,id:data[0].id,role:data[0].role}
         dispatch(LOGIN_USER(obj))

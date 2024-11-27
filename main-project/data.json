@@ -107,6 +107,37 @@
       "createdAt": "2024-11-25T07:23:08.294Z"
     }
   ],
+  "sliders": [
+    {
+      "id": "565b",
+      "name": "image1",
+      "image": "http://res.cloudinary.com/harshitalogicrays/image/upload/v1732526914/sliders/qumlvonkgsgqqqrk7scv.jpg",
+      "description": "eqeqeq",
+      "createdAt": "2024-11-25T09:28:36.682Z"
+    },
+    {
+      "id": "bf9d",
+      "name": "image2",
+      "image": "http://res.cloudinary.com/harshitalogicrays/image/upload/v1732526927/sliders/qwbhcrdjtlo2ftufnisa.jpg",
+      "description": "qeqeq",
+      "createdAt": "2024-11-25T09:28:49.817Z"
+    },
+    {
+      "id": "7e4c",
+      "name": "image3",
+      "image": "http://res.cloudinary.com/harshitalogicrays/image/upload/v1732526938/sliders/w01dcqftnx63j3d2etjq.jpg",
+      "description": "weqeq",
+      "createdAt": "2024-11-25T09:29:00.449Z"
+    },
+    {
+      "id": "3296",
+      "name": "image4",
+      "image": "http://res.cloudinary.com/harshitalogicrays/image/upload/v1732526961/sliders/tgpwmu4zx2asfbk24owc.jpg",
+      "description": "eqeq",
+      "createdAt": "2024-11-25T09:29:12.297Z",
+      "editedAt": "2024-11-25T09:29:22.593Z"
+    }
+  ],
   "orders": [],
   "cart": []
 }

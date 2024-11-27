@@ -4,9 +4,10 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { ShoppingCartIcon } from '@heroicons/react/16/solid'
 import { toast } from 'react-toastify'
-import { ShowonLogin, ShowonLogout } from './hiddenlinks'
+import { ShowonLogin, ShowonLogout } from './hiddenlinks.jsx'
 import { useDispatch, useSelector } from 'react-redux'
 import { LOGOUT_USER, selectUsername } from '../redux/authSlice'
+import { selectCart } from '../redux/cartSlice'
 
 const Header = () => {
     const redirect = useNavigate()
@@ -25,6 +26,7 @@ const Header = () => {
         redirect('/')
       }
       const username = useSelector(selectUsername)
+      const cartItems  =useSelector(selectCart)
   return (
     <>
         <Disclosure as="nav" className="bg-gray-800">
@@ -41,11 +43,6 @@ const Header = () => {
           </div>
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex shrink-0 items-center">
-              {/* <img
-                alt="Your Company"
-                src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500"
-                className="h-8 w-auto"
-              /> */}
               <span className='text-white'>Mypro</span>
             </div>
             <div className="hidden sm:ml-6 sm:block">
@@ -65,7 +62,16 @@ const Header = () => {
             </div>
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-            
+            <input className='rounded-md me-3 text-xl text-gray-400' placeholder='search here'/>
+          <Link to='/cart'
+              type="button"
+              className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+            >
+
+              <ShoppingCartIcon aria-hidden="true" className="h-8 w-8" />
+              <span className='bg-red-600 text-white px-2 rounded-full absolute -top-1 -right-3 inline-flex items-center justify-center text-xs'>{cartItems.length}</span>
+            </Link>
+
            <ShowonLogout> 
           <NavLink to="/login"
                     className={({ isActive}) =>
@@ -79,15 +85,7 @@ const Header = () => {
                   >  Register </NavLink>
           </ShowonLogout>
           <ShowonLogin>
-            <Link to='/cart'
-              type="button"
-              className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-            >
-
-              <ShoppingCartIcon aria-hidden="true" className="h-8 w-8" />
-              <span className='bg-red-600 text-white px-2 rounded-full absolute -top-1 -right-3 inline-flex items-center justify-center text-xs'>0</span>
-            </Link>
-
+        
             {/* Profile dropdown */}
             <Menu as="div" className="relative ml-3">
               <div>

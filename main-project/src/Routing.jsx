@@ -14,6 +14,10 @@ import AddCategory from "./features/Admin/AddCategory";
 import ViewCategory from "./features/Admin/ViewCategory";
 import AddProduct from "./features/Admin/AddProduct";
 import ViewProduct from "./features/Admin/ViewProduct";
+import AddSlider from "./features/Admin/AddSlider";
+import Viewslider from "./features/Admin/ViewSlider";
+import Checkout from "./features/Checkout";
+import { Protected, ProtectedAdmin } from "./features/hiddenlinks";
 
 const routing = createBrowserRouter([
     {path:'/',element:<App/>,
@@ -25,9 +29,10 @@ const routing = createBrowserRouter([
             {path:'login',element:<Login/>},
             {path:'register',element:<Register/>},
             {path:'cart',element:<Cart/>},
+            {path:'checkout',element:<Protected><Checkout/></Protected>}
         ]
     },
-    {path:'/admin',element:<AdminLayout/>,
+    {path:'/admin',element:<ProtectedAdmin><AdminLayout/></ProtectedAdmin>,
         children:[
             {path:'',element:<Dashboard/>},
             {path:'category/add',element:<AddCategory/>},
@@ -36,6 +41,9 @@ const routing = createBrowserRouter([
             {path:'product/add',element:<AddProduct/>},
             {path:'product/view',element:<ViewProduct/>},
             {path:'product/edit/:id',element:<AddProduct/>},
+            {path:'slider/add',element:<AddSlider/>},
+            {path:'slider/view',element:<Viewslider/>},
+            {path:'slider/edit/:id',element:<AddSlider/>},
         ]
     },
     {path:'*',element:<Pagenotfound/>}

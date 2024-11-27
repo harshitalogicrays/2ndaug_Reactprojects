@@ -2,23 +2,25 @@ import React, { useEffect, useState } from 'react'
 import { toast } from 'react-toastify'
 import Loader from './Loader'
 import ReactPaginate from 'react-paginate'
+import { useDispatch, useSelector } from 'react-redux'
+import axios from 'axios'
+import { selectproducts, store_products } from '../redux/productSlice'
+import { ADD_TO_CART } from '../redux/cartSlice'
 
 const Products = () => {
-  let [products,setProducts]=useState([])
-  let getData = async()=>{
-    try{
-      let res =  await fetch("https://dummyjson.com/products") //{"products":[]}
-      let data =  await res.json()
-      console.log(data)
-      setProducts(data.products)
-      }
-      catch(err){
-          toast.error(err)
-      }
-  }
-
-  useEffect(()=>{getData()},[]) 
+  const dispatch = useDispatch()
+        let getData = async () => {
+          try {
+            const res = await axios.get(`${import.meta.env.VITE_BASE_URL}/products`)
+            dispatch(store_products(res.data))}
+          catch (err) { toast.error(err.message) }  }
+        useEffect(() => {getData()}, [])
+      
+        const products = useSelector(selectproducts)
+        
   const handleCart=(product)=>{
+    dispatch(ADD_TO_CART(product))
+    window.scrollTo(0,0)
     }
 
   let itemsPerPage = 4 //30 =>0 to 29 index => 0 to 3 index ,4 to 7,8 to 11 
@@ -47,7 +49,7 @@ const Products = () => {
           <div key={product.id} className="group relative">
             <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
               <img
-                alt={product.title}
+                alt={product.name}
                 src={product.images[0]}
                 className="h-full w-full object-cover object-center lg:h-full lg:w-full"
               />
@@ -55,11 +57,11 @@ const Products = () => {
             <div className="mt-4 ">
               <div>
                 <h3 className="text-sm text-gray-700">
-                  {product.title}
+                  {product.name}
                 </h3>
                 <p className="mt-1 text-sm text-gray-500">{product.brand}</p>
               </div>
-              <p className="text-sm font-medium text-gray-900">{product.price}</p>
+              <p className="text-sm font-medium text-gray-900">{product.sellingPrice}</p>
             </div>
             <button type="button" className='bg-slate-500 text-white p-2 rounded shadow shadow-black hover:bg-yellow-200 hover:text-black mt-2' onClick={()=>handleCart(product)}>Add to cart</button>
           </div>

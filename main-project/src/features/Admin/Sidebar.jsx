@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaHome, FaList, FaListUl, FaPenFancy, FaPenSquare, FaThList } from 'react-icons/fa'
+import { FaHome, FaImages, FaList, FaListUl, FaPenFancy, FaPenSquare, FaThList } from 'react-icons/fa'
 import { FaListOl } from 'react-icons/fa6'
 import { Link } from 'react-router-dom'
 
@@ -26,6 +26,10 @@ const Sidebar = () => {
         <Link to='/admin/product/view' className="flex items-center p-4 hover:bg-gray-700">
         <FaThList className="mr-0 sm:mr-3" />
         <span className="hidden sm:block">View Products</span> </Link>
+        <Link to='/admin/slider/view' className="flex items-center p-4 hover:bg-gray-700">
+        <FaImages className="mr-0 sm:mr-3" />
+        <span className="hidden sm:block">Sliders</span> </Link>
+        
     </nav>  </div>	
   )
 }
