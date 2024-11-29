@@ -18,18 +18,21 @@ import AddSlider from "./features/Admin/AddSlider";
 import Viewslider from "./features/Admin/ViewSlider";
 import Checkout from "./features/Checkout";
 import { Protected, ProtectedAdmin } from "./features/hiddenlinks";
+import { FetchProduct } from "./features/FetchProducts";
+import Thankyou from "./features/Thankyou";
 
 const routing = createBrowserRouter([
     {path:'/',element:<App/>,
         children:[
-            {path:'',element:<Home/>},
+            {path:'',element:<Home/>,loader:FetchProduct},
             {path:'about',element:<About/>},
-            {path:'products',element:<Products/>},
+            {path:'products',element:<Products/>,loader:FetchProduct},
             {path:'contact',element:<Contact/>},
             {path:'login',element:<Login/>},
             {path:'register',element:<Register/>},
             {path:'cart',element:<Cart/>},
-            {path:'checkout',element:<Protected><Checkout/></Protected>}
+            {path:'checkout',element:<Protected><Checkout/></Protected>},
+            {path:'thankyou',element:<Protected><Thankyou/></Protected>}
         ]
     },
     {path:'/admin',element:<ProtectedAdmin><AdminLayout/></ProtectedAdmin>,

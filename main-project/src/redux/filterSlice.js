@@ -15,7 +15,7 @@ const filterSlice =  createSlice({
         filterbyprice(state,action){
             let {products,price} =action.payload
             if(price !=0){
-                const filter = products.filter(item=>item.price <= price)
+                const filter = products.filter(item=>item.sellingPrice <= price)
                 state.filterProducts = filter
             }   
             state.priceval = price
@@ -24,7 +24,7 @@ const filterSlice =  createSlice({
     filterbysearch(state,action){
         let {products,search} =action.payload
         if(search !=''){
-            const filter = products.filter(item=>item.title.toLowerCase().includes(search.toLowerCase()))
+            const filter = products.filter(item=>item.name.toLowerCase().includes(search.toLowerCase()))
             state.filterProducts = filter
         }   
         state.searchval = search

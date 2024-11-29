@@ -64,8 +64,8 @@
       "category": "cloths",
       "brand": "zara",
       "stock": "30",
-      "sellingPrice": "2000",
-      "originalPrice": "2000",
+      "sellingPrice": "200",
+      "originalPrice": "200",
       "images": [
         "http://res.cloudinary.com/harshitalogicrays/image/upload/v1732518386/products/x9i2ndgfjridcbtvsbf9.png",
         "http://res.cloudinary.com/harshitalogicrays/image/upload/v1732518456/products/aoozbygcmesv6jmnqspq.jpg",
@@ -81,8 +81,8 @@
       "category": "cloths",
       "brand": "brand2",
       "stock": "100",
-      "sellingPrice": "100000",
-      "originalPrice": "1000000",
+      "sellingPrice": "100",
+      "originalPrice": "100",
       "images": [
         "http://res.cloudinary.com/harshitalogicrays/image/upload/v1732519126/products/eh7jzkuim7glinyg3kaj.png",
         "http://res.cloudinary.com/harshitalogicrays/image/upload/v1732519126/products/mcocuy9ydhe5wugru2dv.png",
@@ -97,8 +97,8 @@
       "category": "Grocery",
       "brand": "hp",
       "stock": "3",
-      "sellingPrice": "10000",
-      "originalPrice": "10000",
+      "sellingPrice": "10",
+      "originalPrice": "10",
       "images": [
         "http://res.cloudinary.com/harshitalogicrays/image/upload/v1732519385/products/qzr7s2lhki1d8k6twshk.png",
         "http://res.cloudinary.com/harshitalogicrays/image/upload/v1732519385/products/soqwm42wizyayblhrtaq.jpg"
@@ -138,6 +138,60 @@
       "editedAt": "2024-11-25T09:29:22.593Z"
     }
   ],
-  "orders": [],
+  "orders": [
+    {
+      "id": "9b04",
+      "userId": "9f88",
+      "shippingAddress": {
+        "name": "aaa",
+        "email": "aaa",
+        "mobile": "111",
+        "city": "aa",
+        "address": "11",
+        "postalcode": "1111"
+      },
+      "cartItems": [
+        {
+          "id": "46db",
+          "name": "product1",
+          "category": "cloths",
+          "brand": "zara",
+          "stock": "30",
+          "sellingPrice": "200",
+          "originalPrice": "200",
+          "images": [
+            "http://res.cloudinary.com/harshitalogicrays/image/upload/v1732518386/products/x9i2ndgfjridcbtvsbf9.png",
+            "http://res.cloudinary.com/harshitalogicrays/image/upload/v1732518456/products/aoozbygcmesv6jmnqspq.jpg",
+            "http://res.cloudinary.com/harshitalogicrays/image/upload/v1732520438/products/saoom6ma9zugeatr8dei.jpg",
+            "http://res.cloudinary.com/harshitalogicrays/image/upload/v1732520439/products/mg0hlgxwyaii8dfafssn.jpg"
+          ],
+          "description": "dsffsfsfsf",
+          "editedAt": "2024-11-25T07:43:22.417Z",
+          "qty": 1
+        },
+        {
+          "id": "e8e7",
+          "name": "product2",
+          "category": "cloths",
+          "brand": "brand2",
+          "stock": "100",
+          "sellingPrice": "100",
+          "originalPrice": "100",
+          "images": [
+            "http://res.cloudinary.com/harshitalogicrays/image/upload/v1732519126/products/eh7jzkuim7glinyg3kaj.png",
+            "http://res.cloudinary.com/harshitalogicrays/image/upload/v1732519126/products/mcocuy9ydhe5wugru2dv.png",
+            "http://res.cloudinary.com/harshitalogicrays/image/upload/v1732519127/products/rx6bxlbyoctayy91hu7p.png"
+          ],
+          "description": "erwrwr",
+          "createdAt": "2024-11-25T07:18:49.368Z",
+          "qty": 1
+        }
+      ],
+      "total": 300,
+      "status": "in progress",
+      "createdAt": "2024-11-29T07:25:29.825Z",
+      "paymentMethod":"cod"
+    }
+  ],
   "cart": []
 }
