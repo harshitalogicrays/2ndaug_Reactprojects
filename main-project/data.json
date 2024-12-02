@@ -17,6 +17,15 @@
       "cpassword": "admin123",
       "role": "0",
       "createdAt": "2024-11-20T06:54:49.711Z"
+    },
+    {
+      "id": "6e1c",
+      "username": "happy",
+      "email": "happy@test.com",
+      "password": "happy123",
+      "cpassword": "happy123",
+      "role": "1",
+      "createdAt": "2024-12-02T07:29:47.852Z"
     }
   ],
   "categories": [
@@ -190,7 +199,60 @@
       "total": 300,
       "status": "in progress",
       "createdAt": "2024-11-29T07:25:29.825Z",
-      "paymentMethod":"cod"
+      "paymentMethod": "cod"
+    },
+    {
+      "id": "a579",
+      "userId": "6e1c",
+      "shippingAddress": {
+        "name": "wrw",
+        "email": "wrw",
+        "mobile": "wrw",
+        "city": "wrw",
+        "address": "wrw",
+        "postalcode": "wrw"
+      },
+      "cartItems": [
+        {
+          "id": "e8e7",
+          "name": "product2",
+          "category": "cloths",
+          "brand": "brand2",
+          "stock": "100",
+          "sellingPrice": "100",
+          "originalPrice": "100",
+          "images": [
+            "http://res.cloudinary.com/harshitalogicrays/image/upload/v1732519126/products/eh7jzkuim7glinyg3kaj.png",
+            "http://res.cloudinary.com/harshitalogicrays/image/upload/v1732519126/products/mcocuy9ydhe5wugru2dv.png",
+            "http://res.cloudinary.com/harshitalogicrays/image/upload/v1732519127/products/rx6bxlbyoctayy91hu7p.png"
+          ],
+          "description": "erwrwr",
+          "createdAt": "2024-11-25T07:18:49.368Z",
+          "qty": 1
+        },
+        {
+          "id": "46db",
+          "name": "product1",
+          "category": "cloths",
+          "brand": "zara",
+          "stock": "30",
+          "sellingPrice": "200",
+          "originalPrice": "200",
+          "images": [
+            "http://res.cloudinary.com/harshitalogicrays/image/upload/v1732518386/products/x9i2ndgfjridcbtvsbf9.png",
+            "http://res.cloudinary.com/harshitalogicrays/image/upload/v1732518456/products/aoozbygcmesv6jmnqspq.jpg",
+            "http://res.cloudinary.com/harshitalogicrays/image/upload/v1732520438/products/saoom6ma9zugeatr8dei.jpg",
+            "http://res.cloudinary.com/harshitalogicrays/image/upload/v1732520439/products/mg0hlgxwyaii8dfafssn.jpg"
+          ],
+          "description": "dsffsfsfsf",
+          "editedAt": "2024-11-25T07:43:22.417Z",
+          "qty": 1
+        }
+      ],
+      "total": 300,
+      "status": "in progress",
+      "paymentMethod": "online",
+      "createdAt": "2024-12-02T07:30:22.324Z"
     }
   ],
   "cart": []

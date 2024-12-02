@@ -1,0 +1,7 @@
+package.json file -> npm init --y 
+
+npm i express cors stripe dotenv nodemon
+
+express  -  web framework of nodejs
+cors - cross origin resource sharing
+stripe ->  

@@ -20,6 +20,8 @@ import Checkout from "./features/Checkout";
 import { Protected, ProtectedAdmin } from "./features/hiddenlinks";
 import { FetchProduct } from "./features/FetchProducts";
 import Thankyou from "./features/Thankyou";
+import MyOrder from "./features/MyOrder";
+import Orders from "./features/Admin/Orders";
 
 const routing = createBrowserRouter([
     {path:'/',element:<App/>,
@@ -32,7 +34,8 @@ const routing = createBrowserRouter([
             {path:'register',element:<Register/>},
             {path:'cart',element:<Cart/>},
             {path:'checkout',element:<Protected><Checkout/></Protected>},
-            {path:'thankyou',element:<Protected><Thankyou/></Protected>}
+            {path:'thankyou',element:<Protected><Thankyou/></Protected>},
+            {path:'myorders',element:<Protected><MyOrder/></Protected>}
         ]
     },
     {path:'/admin',element:<ProtectedAdmin><AdminLayout/></ProtectedAdmin>,
@@ -47,6 +50,7 @@ const routing = createBrowserRouter([
             {path:'slider/add',element:<AddSlider/>},
             {path:'slider/view',element:<Viewslider/>},
             {path:'slider/edit/:id',element:<AddSlider/>},
+            {path:'orders',element:<Orders/>},
         ]
     },
     {path:'*',element:<Pagenotfound/>}

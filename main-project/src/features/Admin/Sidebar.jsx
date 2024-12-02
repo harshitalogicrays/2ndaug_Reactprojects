@@ -1,6 +1,6 @@
 import React from 'react'
 import { FaHome, FaImages, FaList, FaListUl, FaPenFancy, FaPenSquare, FaThList } from 'react-icons/fa'
-import { FaListOl } from 'react-icons/fa6'
+import { FaLaptopFile, FaListOl } from 'react-icons/fa6'
 import { Link } from 'react-router-dom'
 
 const Sidebar = () => {
@@ -29,7 +29,9 @@ const Sidebar = () => {
         <Link to='/admin/slider/view' className="flex items-center p-4 hover:bg-gray-700">
         <FaImages className="mr-0 sm:mr-3" />
         <span className="hidden sm:block">Sliders</span> </Link>
-        
+        <Link to='/admin/orders' className="flex items-center p-4 hover:bg-gray-700">
+        <FaLaptopFile className="mr-0 sm:mr-3" />
+        <span className="hidden sm:block">Orders</span> </Link>
     </nav>  </div>	
   )
 }

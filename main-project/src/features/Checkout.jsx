@@ -6,6 +6,12 @@ import { selectId } from '../redux/authSlice'
 import { EMPTY_CART, selectCart, selectTotal } from '../redux/cartSlice'
 import { saveorder } from './hiddenlinks'
 import { useNavigate } from 'react-router-dom'
+import PaymentForm from './PaymentForm'
+import { loadStripe } from '@stripe/stripe-js'
+import { Elements } from '@stripe/react-stripe-js'
+import { storecheckout } from '../redux/checkoutSlice'
+
+const stripePromise = loadStripe(`${import.meta.env.VITE_STRIPE_PK}`)
 
 const Checkout = () => {
   const userId =useSelector(selectId)
@@ -15,22 +21,37 @@ const Checkout = () => {
   const navigate  =useNavigate()
   const [shippingAddress,setShippingAddress] = useState({name:"",email:"",mobile:"",city:"",address:"",postalcode:""})
   const [paymentMethod,setPaymentMethod] =useState('')
-
-  const handleSubmit=(e)=>{
+  const [clientsecret,setClientSecret] =useState("")
+  const handleSubmit=async(e)=>{
     e.preventDefault()
    let {name,email,mobile,city,address,postalcode} = shippingAddress
    if(!name || !email || !mobile || !city ||!address ||!postalcode || !paymentMethod){
     toast.error("please fill all the fields");return
    }
+   dispatch(storecheckout(shippingAddress))
    if(paymentMethod =="cod"){
     //order placed , status set, empty cart
     saveorder({userId,shippingAddress,cartItems,total,status:"in progress",paymentMethod:"cod"})
     dispatch(EMPTY_CART())
     navigate('/thankyou')
    }
-   else if(paymentMethod=="online"){}
+   else if(paymentMethod=="online"){
+    try{
+      const res = await fetch(`${import.meta.env.VITE_NODE_URL}/create-payment-intent`,{
+        method:"POST",
+        headers:{'content-type':'application/json'},
+        body:JSON.stringify({amount:total})
+      })
+      const data = await res.json()
+      console.log(data.clientsecret)
+      toast.success("Payment initialized")
+      setClientSecret(data.clientsecret)
+    }
+    catch(err){toast.error(err.message)}
+   }
   }
   return (
+    <Elements stripe={stripePromise}>
     <div className='grid grid-cols-1 sm:grid-cols-2 mx-14 mt-14 shadow-md p-5'>
       <CheckoutSummary/>
       <div>
@@ -120,7 +141,13 @@ const Checkout = () => {
               <label htmlFor="brand" className=" text-gray-700 font-medium mb-2">
                 Pay Online
               </label>
+            </div>    
+            {(paymentMethod=="online" && clientsecret)
+              &&
+              <div>
+              <PaymentForm clientsecret={clientsecret}/>
             </div>
+            }
           <div className="flex justify-between">
                 <button type="submit" className="mt-8 w-full bg-red-600 text-white py-1 rounded-lg text-lg font-medium hover:bg-red-700 transition duration-200 me-2">
                     Place Order
@@ -132,6 +159,7 @@ const Checkout = () => {
         </form>
       </div>
     </div>
+    </Elements>
   )
 }
 
